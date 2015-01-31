@@ -1,2 +1,7 @@
-export {JadeView} from './jade';
-export {JadeConventionView} from './jade-convention';
+import JadeView from './jade';
+import JadeConventionView from './jade-convention';
+
+export {
+	JadeView,
+	JadeConventionView
+};

@@ -1,12 +1,17 @@
 System.register(["./jade", "./jade-convention"], function (_export) {
   "use strict";
 
+  var JadeView, JadeConventionView;
   return {
     setters: [function (_jade) {
-      _export("JadeView", _jade.JadeView);
+      JadeView = _jade["default"];
     }, function (_jadeConvention) {
-      _export("JadeConventionView", _jadeConvention.JadeConventionView);
+      JadeConventionView = _jadeConvention["default"];
     }],
-    execute: function () {}
+    execute: function () {
+      _export("JadeView", JadeView);
+
+      _export("JadeConventionView", JadeConventionView);
+    }
   };
 });
