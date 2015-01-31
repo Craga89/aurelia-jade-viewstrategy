@@ -30,7 +30,7 @@ export default class JadeView extends ViewStrategy {
 			let template = 'default' in module ? module.default : module;
 
 			// Evaluate the client template method and generate a `DocumentFragment`
-			template = JadeConventionView.generateFragment(template(options.data));
+			template = JadeView.generateFragment(template(options.data));
 
 			// Taken straight from the `viewEngine.loadViewFactory` method
 			return viewEngine.loadTemplateResources(this.viewUrl, template, this.moduleId).then(resources => {

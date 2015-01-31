@@ -55,7 +55,7 @@ define(["exports", "module", "aurelia-templating"], function (exports, module, _
           return viewEngine.loader.loadModule(this.viewUrl).then(function (module) {
             var template = "default" in module ? module["default"] : module;
 
-            template = JadeConventionView.generateFragment(template(options.data));
+            template = JadeView.generateFragment(template(options.data));
 
             return viewEngine.loadTemplateResources(_this.viewUrl, template, _this.moduleId).then(function (resources) {
               var existing = viewEngine.importedViews[_this.viewUrl];
