@@ -1,4 +1,4 @@
-define(["exports", "module", "aurelia-metadata", "jade"], function (exports, module, _aureliaMetadata, _jade) {
+define(["exports", "module", "aurelia-metadata", "./jade"], function (exports, module, _aureliaMetadata, _jade) {
   "use strict";
 
   var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };

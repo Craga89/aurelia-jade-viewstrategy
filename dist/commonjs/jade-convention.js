@@ -7,7 +7,7 @@ var _get = function get(object, property, receiver) { var desc = Object.getOwnPr
 var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
 var Origin = require("aurelia-metadata").Origin;
-var JadeView = require("jade").JadeView;
+var JadeView = require("./jade").JadeView;
 var JadeConventionView = (function (JadeView) {
   function JadeConventionView(viewModel, isCompiled) {
     this.moduleId = Origin.get(viewModel.constructor).moduleId;

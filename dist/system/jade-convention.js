@@ -1,4 +1,4 @@
-System.register(["aurelia-metadata", "jade"], function (_export) {
+System.register(["aurelia-metadata", "./jade"], function (_export) {
   "use strict";
 
   var Origin, JadeView, _prototypeProperties, _get, _inherits, JadeConventionView;
