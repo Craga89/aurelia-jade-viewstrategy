@@ -1,5 +1,5 @@
 import {Origin} from 'aurelia-metadata';
-import JadeView from 'jade';
+import {JadeView} from 'jade';
 
 /**
 Retrieves a `.jade`-type view via usual convention used by `ConventionView`. 
