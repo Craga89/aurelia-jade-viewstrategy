@@ -6,7 +6,7 @@ System.register(["aurelia-metadata", "./jade"], function (_export) {
     setters: [function (_aureliaMetadata) {
       Origin = _aureliaMetadata.Origin;
     }, function (_jade) {
-      JadeView = _jade.JadeView;
+      JadeView = _jade["default"];
     }],
     execute: function () {
       _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
