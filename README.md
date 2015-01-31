@@ -3,6 +3,31 @@
 This library is an addon to the [Aurelia](http://www.aurelia.io/) platform and provides `JadeView` and `JadeConventionView` ViewStrategy classes which will allow
 you to utilise `.jade` and `.jade.js` compiled files easily, along with the SystemJS `jade` plugin (installed as dependency).
 
+## Usage
+To utilise this `ViewStrategy`, override the `getViewStrategy` on your ViewModel. Here's an example using `JadeConventionView`:
+
+```js
+import {JadeConventionView} from 'aurelia-jade-viewstrategy';
+
+class ViewModel {
+	getViewStrategy() {
+		return new JadeConventionView(this);
+	}
+}
+```
+
+If you don't want to retrieve the view by convention, but rather using a defined URL, use `JadeView` instead:
+
+```js
+import {JadeView} from 'aurelia-jade-viewstrategy';
+
+class ViewModel {
+	getViewStrategy() {
+		return new JadeView('./template.jade');
+	}
+}
+```
+
 
 ## Dependencies
 
