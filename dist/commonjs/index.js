@@ -1,5 +1,5 @@
 "use strict";
 
 exports.JadeView = require("./jade").JadeView;
-exports.JadeConventionalView = require("./jade-convention").JadeConventionalView;
+exports.JadeConventionView = require("./jade-convention").JadeConventionView;
 exports.__esModule = true;

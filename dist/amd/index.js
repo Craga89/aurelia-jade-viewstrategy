@@ -2,6 +2,6 @@ define(["exports", "./jade", "./jade-convention"], function (exports, _jade, _ja
   "use strict";
 
   exports.JadeView = _jade.JadeView;
-  exports.JadeConventionalView = _jadeConvention.JadeConventionalView;
+  exports.JadeConventionView = _jadeConvention.JadeConventionView;
   exports.__esModule = true;
 });

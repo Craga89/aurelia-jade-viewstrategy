@@ -5,7 +5,7 @@ System.register(["./jade", "./jade-convention"], function (_export) {
     setters: [function (_jade) {
       _export("JadeView", _jade.JadeView);
     }, function (_jadeConvention) {
-      _export("JadeConventionalView", _jadeConvention.JadeConventionalView);
+      _export("JadeConventionView", _jadeConvention.JadeConventionView);
     }],
     execute: function () {}
   };
