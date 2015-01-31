@@ -1,0 +1,54 @@
+{
+  "name": "aurelia-jade-viewstrategy",
+  "version": "0.1.0",
+  "description": "An implementation of the ViewStrategy that supports loading of `.jade` and `.jade.js` compiled views.",
+  "keywords": [
+    "aurelia",
+    "viewstrategy",
+    "jade",
+    "compiled"
+  ],
+  "homepage": "http://github.com/Craga89/aurelia-jade-viewstrategy",
+  "bugs": {
+    "url": "http://github.com/Craga89/aurelia-jade-viewstrategy/issues"
+  },
+  "license": "MIT",
+  "author": "Craig Michael Thompson <craig@craigsworks.com> (http://craigsworks.com)",
+  "main": "dist/commonjs/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/Craga89/aurelia-jade-viewstrategy"
+  },
+  "jspm": {
+    "main": "system/index",
+    "format": "register",
+    "directories": {
+      "lib": "dist"
+    },
+    "dependencies": {
+      "aurelia-binding": "^0.3.2",
+      "aurelia-metadata": "^0.3.1",
+      "jade": "^1.9.0"
+    }
+  },
+  "devDependencies": {
+    "aurelia-tools": "git://github.com/aurelia/tools.git",
+    "conventional-changelog": "0.0.11",
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-6to5": "^3.0.0",
+    "gulp-bump": "^0.1.11",
+    "gulp-jshint": "^1.9.0",
+    "gulp-yuidoc": "^0.1.2",
+    "jasmine-core": "^2.1.3",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.28",
+    "karma-6to5-preprocessor": "^3.0.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.2",
+    "karma-jspm": "^1.0.1",
+    "object.assign": "^1.0.3",
+    "run-sequence": "^1.0.2",
+    "vinyl-paths": "^1.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "aurelia-jade-viewstrategy",
+  "version": "0.1.0",
+  "description": "An implementation of the ViewStrategy that supports loading of `.jade` and `.jade.js` compiled views.",
+  "keywords": [
+    "aurelia",
+    "viewstrategy",
+    "jade",
+    "compiled"
+  ],
+  "homepage": "http://github.com/Craga89/aurelia-jade-viewstrategy",
+  "license": "MIT",
+  "authors": [
+    "Craig Michael Thompson <craig@craigsworks.com> (http://craigsworks.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/Craga89/aurelia-jade-viewstrategy"
+  },
+  "dependencies": {
+    "aurelia-binding": "^0.3.2",
+    "aurelia-metadata": "^0.3.1"
+  }
+}
