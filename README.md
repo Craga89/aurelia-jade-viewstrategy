@@ -28,6 +28,18 @@ class ViewModel {
 }
 ```
 
+Finally, if you are using pre-compiled `jade.js` files (i.e. you've pre-compiled the `.jade` files into their associated template functions) and want to use those instead, you can tell the instance not to use the SystemJS loader and instead load the view as a pure JS module using the second `isCompiled` flag.
+
+```js
+import {JadeView} from 'aurelia-jade-viewstrategy';
+
+class ViewModel {
+	getViewStrategy() {
+		// Same applies to JadeConventionView
+		return new JadeView('./template.jade', true);
+	}
+}
+```
 
 ## Dependencies
 
