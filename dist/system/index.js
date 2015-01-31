@@ -1,4 +1,4 @@
-System.register(["jade", "jade-convention"], function (_export) {
+System.register(["./jade", "./jade-convention"], function (_export) {
   "use strict";
 
   return {
