@@ -8,7 +8,6 @@ Retrieves a `.jade`-type view via usual convention used by `ConventionView`.
 @extends JadeView
 @param viewModel {Object} ViewModel to determine viewUrl by convention from
 @param [isCompiled] {Boolean} If true, will not attempt to use SystemJS plugin loader (i.e. no '!' suffix)
-@param [extension] {String} Custom extension used for your views (defaults to `.jade.js` for compiled, `jade` for non-compiled)
 **/
 export default class JadeConventionView extends JadeView {
 	constructor(viewModel, isCompiled) {
