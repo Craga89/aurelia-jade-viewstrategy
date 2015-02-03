@@ -13,10 +13,8 @@ define(["exports", "module", "aurelia-metadata", "./jade"], function (exports, m
   var JadeView = _interopRequire(_jade);
 
   var JadeConventionView = (function (JadeView) {
-    function JadeConventionView(viewModel, isCompiled) {
-      this.moduleId = Origin.get(viewModel.constructor).moduleId;
-
-      return _get(Object.getPrototypeOf(JadeConventionView.prototype), "constructor", this).call(this, JadeConventionView.convertModuleIdToViewUrl(this.moduleId), isCompiled);
+    function JadeConventionView(isCompiled) {
+      this.isCompiled = isCompiled;
     }
 
     _inherits(JadeConventionView, JadeView);
@@ -24,7 +22,17 @@ define(["exports", "module", "aurelia-metadata", "./jade"], function (exports, m
     _prototypeProperties(JadeConventionView, {
       convertModuleIdToViewUrl: {
         value: function convertModuleIdToViewUrl(moduleId, isCompiled) {
-          return moduleId + ".jade";
+          return JadeView.parseViewUrl(moduleId + ".jade", isCompiled);
+        },
+        writable: true,
+        configurable: true
+      }
+    }, {
+      loadViewFactory: {
+        value: function loadViewFactory(viewEngine, options) {
+          this.viewUrl = JadeConventionView.convertModuleIdToViewUrl(this.moduleId, this.isCompiled);
+
+          return _get(Object.getPrototypeOf(JadeConventionView.prototype), "loadViewFactory", this).call(this, viewEngine, options);
         },
         writable: true,
         configurable: true

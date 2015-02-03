@@ -16,10 +16,8 @@ System.register(["aurelia-metadata", "./jade"], function (_export) {
       _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
       JadeConventionView = (function (JadeView) {
-        function JadeConventionView(viewModel, isCompiled) {
-          this.moduleId = Origin.get(viewModel.constructor).moduleId;
-
-          return _get(Object.getPrototypeOf(JadeConventionView.prototype), "constructor", this).call(this, JadeConventionView.convertModuleIdToViewUrl(this.moduleId), isCompiled);
+        function JadeConventionView(isCompiled) {
+          this.isCompiled = isCompiled;
         }
 
         _inherits(JadeConventionView, JadeView);
@@ -27,7 +25,17 @@ System.register(["aurelia-metadata", "./jade"], function (_export) {
         _prototypeProperties(JadeConventionView, {
           convertModuleIdToViewUrl: {
             value: function convertModuleIdToViewUrl(moduleId, isCompiled) {
-              return moduleId + ".jade";
+              return JadeView.parseViewUrl(moduleId + ".jade", isCompiled);
+            },
+            writable: true,
+            configurable: true
+          }
+        }, {
+          loadViewFactory: {
+            value: function loadViewFactory(viewEngine, options) {
+              this.viewUrl = JadeConventionView.convertModuleIdToViewUrl(this.moduleId, this.isCompiled);
+
+              return _get(Object.getPrototypeOf(JadeConventionView.prototype), "loadViewFactory", this).call(this, viewEngine, options);
             },
             writable: true,
             configurable: true

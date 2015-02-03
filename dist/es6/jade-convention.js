@@ -10,13 +10,24 @@ Retrieves a `.jade`-type view via usual convention used by `ConventionView`.
 @param [isCompiled] {Boolean} If true, will not attempt to use SystemJS plugin loader (i.e. no '!' suffix)
 **/
 export default class JadeConventionView extends JadeView {
-	constructor(viewModel, isCompiled) {
-		this.moduleId = Origin.get(viewModel.constructor).moduleId;
+	constructor(isCompiled) {
+		this.isCompiled = isCompiled;
+	}
 
-		return super(
-			JadeConventionView.convertModuleIdToViewUrl(this.moduleId),
-			isCompiled
+	/**
+	Overrides JadeView's `loadViewFactory` to dynamically intrept the
+	viewUrl depending on the ViewStrategy's defined `moduleId`.
+
+	@method loadViewFactory
+	@param viewEngine {Object} ViewEngine instance
+	@param options {Object} Configuration options (useShadowDOM etc.)
+	**/
+	loadViewFactory(viewEngine, options) {
+		this.viewUrl = JadeConventionView.convertModuleIdToViewUrl(
+			this.moduleId, this.isCompiled
 		);
+
+		return super.loadViewFactory(viewEngine, options);
 	}
 
 	/**
@@ -27,6 +38,6 @@ export default class JadeConventionView extends JadeView {
 	@param moduleId {String} Module ID to convert
 	**/
 	static convertModuleIdToViewUrl(moduleId, isCompiled) {
-		return moduleId + '.jade';
+		return JadeView.parseViewUrl(moduleId + '.jade', isCompiled);
 	}
 }
