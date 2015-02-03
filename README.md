@@ -11,7 +11,7 @@ import {JadeConventionView} from 'aurelia-jade-viewstrategy';
 
 class ViewModel {
 	getViewStrategy() {
-		return new JadeConventionView(this);
+		return new JadeConventionView();
 	}
 }
 ```
@@ -28,17 +28,35 @@ class ViewModel {
 }
 ```
 
-Finally, if you are using pre-compiled `jade.js` files (i.e. you've pre-compiled the `.jade` files into their associated template functions) and want to use those instead, you can tell the instance not to use the SystemJS loader and instead load the view as a pure JS module using the second `isCompiled` flag.
+Finally, if you are using pre-compiled `jade.js` files (i.e. you've pre-compiled the `.jade` files into their associated template functions) and want to use those instead, you can tell the instance not to use the SystemJS loader and instead load the view as a pure JS module using the `isCompiled` flag.
 
 ```js
 import {JadeView} from 'aurelia-jade-viewstrategy';
 
 class ViewModel {
 	getViewStrategy() {
-		// Same applies to JadeConventionView
+		// JadeView example
 		return new JadeView('./template.jade', true);
+		
+		// ...or with JadeConventionView
+		return new JadeConventionView(true);
 	}
 }
+```
+
+You can also utilise it with CustomElements by registering the ViewStrategy instance as Metadata:
+
+```js
+import {JadeConventionView} from 'aurelia-jade-viewstrategy';
+
+export default class PageCustomElement {
+	static metadata() {
+		return Behavior
+			.customElement('page')
+			.add( new JadeConventionView() )
+	}
+};
+
 ```
 
 ## Dependencies
